@@ -1,0 +1,192 @@
+:root {
+  --fundo: #f6f5f1;
+  --superficie: #ffffff;
+  --texto: #1c2b2f;
+  --texto-suave: #4a5a5e;
+  --destaque: #17565c;
+  --destaque-escuro: #0f3d41;
+  --borda: #d6dcd9;
+  --aviso: #fff4d6;
+  --aviso-borda: #c99a1a;
+  --foco: #c2410c;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 112.5%; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--destaque); text-underline-offset: 3px; }
+a:hover { color: var(--destaque-escuro); }
+
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+}
+
+.pular {
+  position: absolute;
+  left: -9999px;
+}
+.pular:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--superficie);
+  padding: .5rem 1rem;
+  z-index: 10;
+}
+
+.topo {
+  background: var(--destaque);
+  color: #fff;
+}
+.topo .conteudo {
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+}
+.linha-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem 1.5rem;
+  margin-bottom: .6rem;
+}
+.idiomas ul { gap: .25rem .9rem; }
+.idiomas a { font-size: .9rem; }
+.idiomas a[aria-current="true"] { font-weight: 700; }
+
+.aviso-traducao {
+  background: var(--aviso);
+  font-size: .9rem;
+  margin: 0 auto;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
+  max-width: none;
+  text-align: center;
+}
+.marca {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+.topo nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.topo nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .95rem;
+}
+.topo nav a:hover,
+.topo nav a[aria-current="page"] { text-decoration: underline; }
+
+.conteudo {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+main { padding-top: 2rem; padding-bottom: 3rem; }
+
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; line-height: 1.3; margin: 2.2rem 0 .8rem; }
+h3 { font-size: 1.1rem; margin: 0 0 .4rem; }
+
+.introducao { font-size: 1.1rem; color: var(--texto-suave); }
+
+.aviso {
+  background: var(--aviso);
+  border-left: 5px solid var(--aviso-borda);
+  padding: .9rem 1.1rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+.aviso p { margin: 0; }
+
+.assuntos {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+.assuntos a {
+  display: block;
+  background: var(--superficie);
+  border: 2px solid var(--borda);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  text-decoration: none;
+  color: var(--texto);
+}
+.assuntos a:hover { border-color: var(--destaque); }
+.assuntos strong {
+  display: block;
+  color: var(--destaque);
+  font-size: 1.15rem;
+}
+
+.recurso {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 1.2rem 1.3rem;
+  margin: 1rem 0;
+}
+.recurso p { margin: .4rem 0; }
+.recurso dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: .25rem 1rem;
+  margin: .8rem 0;
+  font-size: .95rem;
+}
+.recurso dt { font-weight: 600; color: var(--texto-suave); }
+.recurso dd { margin: 0; }
+.recurso .link-oficial { font-weight: 600; }
+
+.emergencia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: .8rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.emergencia li {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: .8rem 1rem;
+}
+.emergencia strong { display: block; font-size: 1.5rem; color: var(--destaque); }
+
+.rodape {
+  border-top: 1px solid var(--borda);
+  color: var(--texto-suave);
+  font-size: .9rem;
+  padding-top: 1.2rem;
+  padding-bottom: 2rem;
+}
+.rodape p { margin: .3rem 0; }
+
+@media (max-width: 30rem) {
+  h1 { font-size: 1.6rem; }
+  .recurso dl { grid-template-columns: 1fr; }
+  .recurso dt { margin-top: .4rem; }
+}
